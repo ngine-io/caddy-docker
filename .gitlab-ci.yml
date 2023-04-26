@@ -1,12 +1,15 @@
 ---
 .common:
-  image: docker:latest
+  image: docker:23
   services:
-    - docker:dind
+    - name: docker:23-dind
   before_script:
     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
   script:
-    - export $(grep -v '^#' ./VERSION | xargs -0)
+    - |
+      apk add git
+      docker buildx create --use
+      export $(grep -v '^#' ./VERSION | xargs -0)
     - >
       docker buildx build .
       --platform=linux/arm64,linux/amd64
