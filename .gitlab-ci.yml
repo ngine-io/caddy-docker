@@ -1,5 +1,5 @@
 ---
-.common:
+build-push:
   image: docker:23
   services:
     - name: docker:23-dind
