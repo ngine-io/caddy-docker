@@ -21,17 +21,7 @@
       --tag $CI_REGISTRY_IMAGE:$DOCKER_MUTABLE_MAJOR_VERSION
       --tag $CI_REGISTRY_IMAGE
       --pull
-
-build:
-  extends: .common
-  except:
-    - master
-    - /^stable-.*$/
-
-build-push:
-  extends: .common
-  after_script:
-    - docker push --all-tags $CI_REGISTRY_IMAGE
+      --push
   only:
     - master
     - /^stable-.*$/
