@@ -1,7 +1,11 @@
-CADDY_IMAGE_TAG=2.7.5
+# https://hub.docker.com/_/caddy
+CADDY_IMAGE_TAG=2.7.6
+
+# https://github.com/pteich/caddy-tlsconsul
 CADDY_PLUGIN_TLSCONSUL=v1.4.0
+# https://github.com/greenpau/caddy-security
 CADDY_PLUGIN_SECURITY=v1.1.22
 
-DOCKER_VERSION=2.7.5-2
+DOCKER_VERSION=2.7.6-1
 DOCKER_MUTABLE_MINOR_VERSION=2.7
 DOCKER_MUTABLE_MAJOR_VERSION=2
