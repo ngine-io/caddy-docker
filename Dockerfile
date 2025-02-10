@@ -8,6 +8,7 @@ ARG CADDY_PLUGIN_SECURITY
 RUN xcaddy build \
     --with github.com/pteich/caddy-tlsconsul@$CADDY_PLUGIN_TLSCONSUL \
     --with github.com/greenpau/caddy-security@$CADDY_PLUGIN_SECURITY
+    --with github.com/caddy-dns/infomaniak
 
 FROM caddy:$CADDY_IMAGE_TAG
 COPY --from=builder /usr/bin/caddy /usr/bin/caddy
